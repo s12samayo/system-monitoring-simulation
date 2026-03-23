@@ -6,10 +6,17 @@ MEM_THRESHOLD=80
 
 mkdir -p logs
 
+for command in uptime top free awk grep tee; do
+    if ! command -v "$command" >/dev/null 2>&1; then
+        echo "Error: required command '$command' is not installed."
+        exit 1
+    fi
+done
+
 echo "============================" >> "$LOG_FILE"
 echo "System check at: $(date)" >> "$LOG_FILE"
 
-UPTIME_INFO=$(uptime -p)
+UPTIME_INFO=$(uptime -p 2>/dev/null || uptime)
 echo "Uptime: $UPTIME_INFO" >> "$LOG_FILE"
 
 CPU_USAGE=$(top -bn1 | grep "Cpu(s)" | awk '{print 100 - $8}')
