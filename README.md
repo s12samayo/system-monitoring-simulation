@@ -14,7 +14,7 @@ The script checks uptime, CPU usage, and memory usage, writes the results to a l
 
 ## Why I Built This
 
-My background in healthcare and quality control taught me the value of monitoring processes, detecting issues early, and maintaining reliability. This project connects that mindset to DevOps and Linux system administration.I am demonstrating my experience.
+My background in healthcare and quality control taught me the value of monitoring processes, detecting issues early, and maintaining reliability. This project connects that mindset to DevOps and Linux system administration.
 
 ## Project Structure
 
